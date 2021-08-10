@@ -10,7 +10,31 @@
     ],
     "@babel/preset-react"
   ],
-  "plugins": [],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "*": "./",
+          "httpClient": "./src/browser/httpClient",
+          "components": "./src/browser/components",
+          "assets": "./src/browser/assets",
+          "middleware": "./src/browser/middleware",
+          "constants": "./src/browser/constants",
+          "hooks": "./src/browser/hooks",
+          "locales": "./src/browser/locales",
+          "pages": "./src/browser/pages",
+          "state": "./src/browser/state",
+          "selectors": "./src/browser/selectors",
+          "services": "./src/browser/services",
+          "styles": "./src/browser/styles",
+          "utils": "./src/browser/utils",
+          "browser": "./src/browser"
+        }
+      }
+    ]
+  ],
   "env": {
     "test": {
       "plugins": []

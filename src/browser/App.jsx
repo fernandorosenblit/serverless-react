@@ -1,20 +1,31 @@
 import React from "react";
+import { NavLink, Route, Switch } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
-import useConfig from "../components/useConfig";
-import logo from "./logo.svg";
-import "./App.css";
+import "browser/App.css";
 
 export default function App() {
-  const config = useConfig();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Welcome to {config.app.TITLE}</h1>
-      </header>
-      <p className="App-intro">
-        To get started, edit <code>src/App.jsx</code> and save to reload.
-      </p>
+    <div>
+      <Helmet>
+        <title>Helmet test</title>
+      </Helmet>
+      <ul>
+        <li>
+          <NavLink to="/">Home page</NavLink>
+        </li>
+        <li>
+          <NavLink to="/test">Test</NavLink>
+        </li>
+      </ul>
+      <Switch>
+        <Route path="/test">
+          <h1>Test page</h1>
+        </Route>
+        <Route path="/">
+          <h1>Home page</h1>
+        </Route>
+      </Switch>
     </div>
   );
 }
