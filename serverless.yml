@@ -11,6 +11,11 @@ provider:
   logRetentionInDays: 7
 
   environment:
+    API_URL: https://api.dev.external.hollywood.com
+    API_KEY: kiC7PB8QCRio6XqFJmj3PiH6sbAsBhxYre6bSH9t
+    GZIP_ENABLED: false
+    STRIPE_PK: pk_test_TYooMQauvdEDq54NiTphI7jx
+
     SERVERLESS_PROJECT: ${self:service}
     SERVERLESS_REGION: ${self:provider.region}
     SERVERLESS_STAGE: ${self:provider.stage}

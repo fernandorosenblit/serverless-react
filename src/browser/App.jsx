@@ -3,8 +3,6 @@ import { NavLink, Route, Switch } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useIntl } from "react-intl";
 
-import "browser/App.css";
-
 const labels = {
   test: { id: "password.presence" },
 };
@@ -30,7 +28,7 @@ export default function App() {
           <h1>Test page</h1>
         </Route>
         <Route path="/">
-          <h1>Home page 3</h1>
+          <h1>Home page 30</h1>
         </Route>
       </Switch>
     </div>

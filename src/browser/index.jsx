@@ -22,8 +22,6 @@ import apiKeyInterceptor from "httpClient/apiKeyInterceptor";
 import ConfigContext from "../components/ConfigContext";
 import App from "./App";
 
-import "./index.css";
-
 const config = window.__CONFIG__;
 delete window.__CONFIG__;
 

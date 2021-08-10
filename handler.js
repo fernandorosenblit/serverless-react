@@ -1,7 +1,7 @@
 import "source-map-support/register";
 import render from "./src/server/render";
 
-export const serve = async (event, context) => {
+export const serve = async (event) => {
   return {
     statusCode: 200,
     headers: {
