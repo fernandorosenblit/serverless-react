@@ -3,7 +3,7 @@
  * application code into before sending it to the client as regular HTML.
  * Note we're returning a template string from this function.
  */
-const html = ({ stats, content, config, helmet }) => `<!DOCTYPE html>
+const html = ({ stats, content, config, helmet, preloadedState }) => `<!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="utf-8" />
@@ -18,6 +18,9 @@ const html = ({ stats, content, config, helmet }) => `<!DOCTYPE html>
       <link rel="stylesheet" href="${config.app.DIST_URL}/${stats.css}" />
       <script>
         window.__CONFIG__ = ${JSON.stringify(config)};
+      </script>
+      <script id="redux-state">
+      window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}
       </script>
     </head>
     <body>

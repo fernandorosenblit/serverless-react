@@ -21,6 +21,8 @@
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@formatjs/intl-relativetimeformat": "^9.2.1",
     "@rootstrap/redux-tools": "^1.0.0",
+    "axios": "^0.21.1",
+    "babel-polyfill": "^6.26.0",
     "dayjs": "^1.10.6",
     "humps": "^2.0.1",
     "json-api-normalizer": "^1.0.4",
@@ -36,6 +38,7 @@
     "redux": "^4.1.1",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
+    "serialize-javascript": "^6.0.0",
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {
