@@ -1,10 +1,17 @@
 import React from "react";
 import { NavLink, Route, Switch } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useIntl } from "react-intl";
 
 import "browser/App.css";
 
+const labels = {
+  test: { id: "password.presence" },
+};
+
 export default function App() {
+  const intl = useIntl();
+
   return (
     <div>
       <Helmet>
@@ -12,7 +19,7 @@ export default function App() {
       </Helmet>
       <ul>
         <li>
-          <NavLink to="/">Home page</NavLink>
+          <NavLink to="/">{intl.formatMessage(labels.test)}</NavLink>
         </li>
         <li>
           <NavLink to="/test">Test</NavLink>
