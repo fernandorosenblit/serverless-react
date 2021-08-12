@@ -2,7 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { StatsWriterPlugin } = require("webpack-stats-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
+const globImporter = require("node-sass-glob-importer");
 const isOffline = !!process.env.IS_OFFLINE;
 
 module.exports = {
@@ -71,12 +71,30 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
+        test: /(\.css|\.scss)$/,
         use: [
+          MiniCssExtractPlugin.loader,
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+            },
           },
-          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              plugins: () => [require("autoprefixer")],
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              includePaths: [path.resolve(__dirname, "./src/browser", "scss")],
+              sourceMap: true,
+              importer: globImporter(),
+            },
+          },
         ],
       },
       {
