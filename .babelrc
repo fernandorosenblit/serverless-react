@@ -23,6 +23,7 @@
           "assets": "./src/browser/assets",
           "middleware": "./src/browser/middleware",
           "constants": "./src/browser/constants",
+          "contexts": "./src/browser/contexts",
           "hooks": "./src/browser/hooks",
           "locales": "./src/browser/locales",
           "pages": "./src/browser/pages",

@@ -20,9 +20,9 @@ import applyDefaultInterceptors from "httpClient/applyDefaultInterceptors";
 import apiKeyInterceptor from "httpClient/apiKeyInterceptor";
 
 import ConfigContext from "../components/ConfigContext";
-import App from "./App";
-
-import "styles/styles.scss";
+import App from "components/App";
+import Snackbars from "components/common/Snackbar/Snackbars";
+// import "styles/styles.scss";
 
 const config = window.__CONFIG__;
 delete window.__CONFIG__;
@@ -43,6 +43,7 @@ hydrate(
       <IntlProvider locale={locale} messages={messages} defaultLocale={DEFAULT_LANGUAGE}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
+            <Snackbars />
             <App />
           </PersistGate>
         </Provider>

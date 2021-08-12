@@ -12,7 +12,7 @@ import serialize from "serialize-javascript";
 import locales from "locales";
 import configureStore from "state/store/configureStore.prod";
 
-import App from "browser/App";
+import App from "components/App";
 import ConfigContext from "../components/ConfigContext";
 import config from "./config";
 import html from "./html";

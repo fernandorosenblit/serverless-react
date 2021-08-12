@@ -90,7 +90,7 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
-              includePaths: [path.resolve(__dirname, "./src/browser", "scss")],
+              includePaths: [path.resolve(__dirname, "src/browser")],
               sourceMap: true,
               importer: globImporter(),
             },
@@ -105,6 +105,7 @@ module.exports = {
         test: /\.svg$/,
         use: ["@svgr/webpack"],
       },
+      { test: /\.ico$/, loader: "file-loader?name=[name].[ext]" },
     ],
   },
   resolve: {
